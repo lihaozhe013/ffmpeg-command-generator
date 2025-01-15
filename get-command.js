@@ -45,11 +45,11 @@ function generateTranscodeCommand() {
     }
     let transcoder = "";
     if (codingFormat.id === "av1") {
-        transcoder = "libaom-av1";
+        transcoder = "libsvtav1";
     } else if (codingFormat.id === "hvac") {
         transcoder = "libx265";
     } else if (codingFormat.id === "avc") {
-        transcoder = "libx265";
+        transcoder = "libx264";
     }
     let output = "ffmpeg -i " + fileName.value + " -c:v " + transcoder + " -crf " + transcodingQuality.value + " -preset " + fastOrSlow.value + " -c:a aac -b:a " + audioQuality.value + "k -movflags +faststart -threads " + numberOfThreads.value + " output." + containerFormat.value;
     outputBox.textContent = output;
@@ -72,11 +72,11 @@ function generateSimpleTranscodeCommand() {
     let output;
     if (codingFormat.id === "av1") {
         // alert("the function is not finished yet, please try other format")
-        output = "ffmpeg -i " + fileName.value + " -c:v libaom-av1 -crf " + transcodingQuality.value + " -preset slow -c:a aac -b:a 320k -movflags +faststart -threads 4 output." + containerFormat.value;
+        output = "ffmpeg -i " + fileName.value + " -c:v libsvtav1 -crf " + transcodingQuality.value + " -c:a aac -b:a 320k -movflags +faststart -threads 4 output." + containerFormat.value;
     } else if (codingFormat.id === "hvac") {
-        output = "ffmpeg -i " + fileName.value + " -c:v libx265 -crf " + transcodingQuality.value + " -preset slow -c:a aac -b:a 320k -movflags +faststart -threads 4 output." + containerFormat.value;
+        output = "ffmpeg -i " + fileName.value + " -c:v libx265 -crf " + transcodingQuality.value + " -c:a aac -b:a 320k -movflags +faststart -threads 4 output." + containerFormat.value;
     } else if (codingFormat.id === "avc") {
-        output = "ffmpeg -i " + fileName.value + " -c:v libx264 -crf " + transcodingQuality.value + " -preset slow -c:a aac -b:a 320k -movflags +faststart -threads 4 output." + containerFormat.value;
+        output = "ffmpeg -i " + fileName.value + " -c:v libx264 -crf " + transcodingQuality.value + " -c:a aac -b:a 320k -movflags +faststart -threads 4 output." + containerFormat.value;
     }
     simpleOutputBox.textContent = output;
 }
