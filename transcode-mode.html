@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <title>FFMpeg Command Generator</title>
     <link rel="stylesheet" href="./styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ubuntu+Sans+Mono:ital@0;1&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="center-background">
@@ -20,7 +17,6 @@
         </fieldset>
         <label for="input-file-name">
             <h3>Enter your file name:</h3>
-            <!-- <br><br> -->
             <textarea style="resize: none; text-align: center;" id="input-file-name" name="input-file-name" rows="1" cols="20" placeholder="Example: input.mp4"></textarea>
         </label>
         <br><br>
@@ -39,9 +35,10 @@
         </label>
 
         <div style="width: 66%; margin: auto;">
-            <p style="font-size: 13px; text-align: justify;">
+            <p style="font-size: 13px; text-align: left; font-family: 'Roboto-MediumItalic';">
                 Notes: Smaller value represent better quality and slower transcoding speed.
-                To get high video quality, 18-23 should be enough.
+                To get high video quality, 18-23 should be enough. For most videos, crf = 30 is recommended.
+                For AV1, quality is preset value rather than crf value, range = 0 - 13, 8 is recommended.
             </p>
         </div>
         <fieldset>
@@ -59,7 +56,7 @@
             <label for="fast"><input id="fast" type="radio" name="fast-or-slow-mode" class="radio-class" value="fast"/>Fast</label>
         </fieldset>
         <div style="width: 66%; margin: auto;">
-            <p style="font-size: 13px; text-align: justify;">
+            <p style="font-size: 13px; text-align: left; font-family: 'Roboto-MediumItalic';">
                 Notes: Slow one have better video quality and slower transcoding speed.
             </p>
         </div>

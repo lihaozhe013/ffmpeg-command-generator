@@ -1,3 +1,5 @@
+*Note: This website uses locally hosted fonts obtained from Google Fonts, which are licensed under open-source licenses. For more details, please refer to the respective font license files.*
+
 # Project Name
 FFMpeg Command Generator
 
